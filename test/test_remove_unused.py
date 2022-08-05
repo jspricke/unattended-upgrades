@@ -19,7 +19,8 @@ class TestRemoveUnused(TestBase):
         self.rootdir = self.make_fake_aptroot(
             template=os.path.join(self.testdir, "root.unused-deps"),
             fake_pkgs=[
-                ("test-package", "1.0", {"Depends": ["test-package-dependency"]}),
+                ("test-package", "1.0.test.pkg", {
+                    "Depends": ["test-package-dependency"]}),
                 ("test-package-dependency", "1.0", {}),
                 ("any-old-unused-modules", "1.0", {}),
                 ("linux-image-4.05.0-1021-kvm", "1.21", {}),
